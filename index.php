@@ -27,7 +27,7 @@
                 <div id="list">
                     <div class="my-col">
                         <ul class="my-row" v-for="listItem in list">
-                            <li>{{listItem.name}}</li>
+                            <li>{{listItem.text}}</li>
                         </ul>
                     </div>
                 </div>
