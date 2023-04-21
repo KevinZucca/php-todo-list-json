@@ -1,7 +1,5 @@
 <?php 
 
-$newTodo = $_GET["newTodo"] ?? '';
-
 ?>
 
 
@@ -29,7 +27,7 @@ $newTodo = $_GET["newTodo"] ?? '';
                 <div id="list">
                     <div class="my-col">
                         <ul class="my-row" v-for="listItem in list">
-                            <li>{{listItem}}</li>
+                            <li>{{listItem.name}}</li>
                         </ul>
                     </div>
                 </div>
@@ -49,3 +47,5 @@ $newTodo = $_GET["newTodo"] ?? '';
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- :class="listItem.done == true ? : 'done' : '' " -->

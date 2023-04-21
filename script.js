@@ -12,14 +12,26 @@ createApp({
 
   methods: {
     getAPI() {
-        axios.get("./server.php").then((res) => {
-            this.list = res.data;
-        })
+      axios.get("./server.php").then((res) => {
+          this.list = res.data;
+      })
     },
 
     addTodo() {
-      this.list.push(this.newTodo);
-      this.newTodo = "";
+
+      let data = {
+          newTodo: "",
+        };
+        
+        data.newTodo = this.newTodo;
+
+
+      axios.post("./server.php", data, {
+        headers: {"Content-Type": "multipart/form-data"}
+      }).then((res) => {
+        this.getAPI();
+        this.newTodo = "";
+      });
     }
   },
 
